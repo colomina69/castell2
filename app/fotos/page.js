@@ -7,23 +7,23 @@ import Link from 'next/link';
 const Page = () => {
   const [fotos, setFotos] = useState([]);
 
+  const obtenerFotos = async () => {
+    try {
+      const respuesta = await fetch('http://www.morosdelcastell.com:3001/archivos');
+      const data = await respuesta.json();
+      setFotos(data);
+    } catch (error) {
+      console.error('Error al obtener los usuarios:', error);
+    }
+  };
   useEffect(() => {
-    const obtenerFotos = async () => {
-      try {
-        const respuesta = await fetch('http://www.morosdelcastell.com:3001/archivos');
-        const data = await respuesta.json();
-        setFotos(data);
-      } catch (error) {
-        console.error('Error al obtener los usuarios:', error);
-      }
-    };
 
     obtenerFotos();
   }, []);
 
   return (
 
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-10 z-0">
         {fotos.map((foto, index) => (
          <div key={index}>
           <Link href={`/fotos/${foto.año}`}>

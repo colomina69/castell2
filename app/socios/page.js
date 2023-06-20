@@ -1,9 +1,9 @@
-import { PrismaClient } from '@prisma/client'
+import { getSocios } from "../lib/prisma/socios"
+
+
 
 async function page() {
-  const prisma = new PrismaClient()
-  const socios=await prisma.socios.findMany()
-
+  const {socios}=await getSocios()
   return (
     <section className="py-20">
     <div className="container">
@@ -42,3 +42,6 @@ async function page() {
 }
 
 export default page
+
+
+
