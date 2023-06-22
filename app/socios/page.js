@@ -2,11 +2,20 @@
 'use client'
 import { useEffect,useState } from "react"
 
-
+/* export async function getServerSideProps() {
+  // Obtener los datos desde la URL
+  
+  // Pasar los datos como propiedades a la página
+  return {
+    props: {
+      socios,
+    },
+  };
+} */
 
 async function Page() {
   //const {socios}=await getSocios()
- /*  const [socios, setSocios] = useState(null);
+  /*  const [socios, setSocios] = useState(null);
   
   useEffect(() => {
     const fetchData = async () => {
@@ -19,10 +28,11 @@ async function Page() {
         console.error('Error al cargar los datos:', error);
       }
     };
-
+    
     fetchData();
- 
+    
   }, []); */
+  
   const response = await fetch('http://localhost:3000/api/socios')
   const socios = await response.json();
   return (
