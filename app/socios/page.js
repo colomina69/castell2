@@ -15,26 +15,25 @@ import { useEffect,useState } from "react"
 
 async function Page() {
   //const {socios}=await getSocios()
-  /*  const [socios, setSocios] = useState(null);
+  /* const [socios, setSocios] = useState([]);
   
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/api/socios')
-        const data = await response.json();
-        console.log(data)
-        setSocios(data);
-      } catch (error) {
-        console.error('Error al cargar los datos:', error);
-      }
-    };
+  useEffect(async() => {
     
-    fetchData();
+    await fetchData();
     
-  }, []); */
+  }, []);
   
+  const fetchData = async () => {
+   
+      const response = await fetch('http://localhost:3000/api/socios')
+      const data = await response.json();
+      console.log(data)
+      setSocios(data);
+  
+  }; */
   const response = await fetch('http://localhost:3000/api/socios')
   const socios = await response.json();
+  console.log(socios)
   return (
     <section className="py-20">
     <div className="container">
