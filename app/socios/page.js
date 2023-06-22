@@ -1,6 +1,7 @@
 //import { getSocios } from "../lib/prisma/socios"
 'use client'
 import { useEffect,useState } from "react"
+import axios from 'axios';
 
 /* export async function getServerSideProps() {
   // Obtener los datos desde la URL
@@ -31,8 +32,8 @@ async function Page() {
       setSocios(data);
   
   }; */
-  const response = await fetch('http://localhost:3000/api/socios')
-  const socios = await response.json();
+  const response = await axios.get('http://localhost:3000/api/socios')
+  const socios = await response.data;
   console.log(socios)
   return (
     <section className="py-20">
