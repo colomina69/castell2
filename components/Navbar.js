@@ -33,6 +33,7 @@ const Navbar = () => {
                 <Link className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/">Castell</Link>
                 <Link className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/fotos">Fotos</Link>
                 <Link className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/socios">Socios</Link>
+                <Link className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/form">Form</Link>
          
             </div>
           </div>
@@ -89,6 +90,7 @@ const Navbar = () => {
             <Link className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/" onClick={toggleMenu}>Castell</Link>
             <Link className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/fotos" onClick={toggleMenu}>Fotos</Link>
             <Link className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/socios" onClick={toggleMenu}>Socios</Link>
+            <Link className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/form" onClick={toggleMenu}>Form</Link>
         </div>
       </div>
     )}
