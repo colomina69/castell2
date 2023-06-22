@@ -32,14 +32,14 @@ async function Page() {
       setSocios(data);
   
   }; */
-  const response = await axios.get('http://localhost:3000/api/socios')
+  /* const response = await axios.get('http://localhost:3000/api/socios')
   const socios = await response.data;
-  console.log(socios)
+  console.log(socios) */
   return (
     <section className="py-20">
     <div className="container">
       <h1>Socios</h1>
-      <br />
+      {/* <br />
       <table className="border-collapse border border-slate-500">
       <thead>
         <tr>
@@ -65,7 +65,7 @@ async function Page() {
         </tr>
         ))}
       </tbody>
-      </table>
+      </table> */}
       
     </div>
   </section>
