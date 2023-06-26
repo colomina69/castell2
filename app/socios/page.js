@@ -6,19 +6,17 @@ export default function Listado(){
   //const {socios}=await getSocios()
   const [socios, setSocios] = useState([]);
   
-  useEffect(async() => {
+
     
     const fetchData = async () => {
-     
-        const response = await fetch("/api/socios")
-        const data = await response.json();
-        console.log(data)
-        setSocios(data);
-    
+      const response = await fetch('/api/socios');
+      const jsonData = await response.json();
+      setSocios(jsonData);
     };
-    await fetchData();
-    
-  }, []);
+  
+    useEffect(() => {
+      fetchData();
+    }, []);
   
   
   return (
