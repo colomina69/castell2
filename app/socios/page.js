@@ -1,40 +1,26 @@
 //import { getSocios } from "../lib/prisma/socios"
 'use client'
 import { useEffect,useState } from "react"
-import axios from 'axios';
 
-/* export async function getServerSideProps() {
-  // Obtener los datos desde la URL
-  
-  // Pasar los datos como propiedades a la página
-  return {
-    props: {
-      socios,
-    },
-  };
-} */
-
-async function Page() {
+export default function Listado(){
   //const {socios}=await getSocios()
-  /* const [socios, setSocios] = useState([]);
+  const [socios, setSocios] = useState([]);
   
   useEffect(async() => {
     
+    const fetchData = async () => {
+     
+        const response = await fetch("/api/socios")
+        const data = await response.json();
+        console.log(data)
+        setSocios(data);
+    
+    };
     await fetchData();
     
   }, []);
   
-  const fetchData = async () => {
-   
-      const response = await fetch('http://localhost:3000/api/socios')
-      const data = await response.json();
-      console.log(data)
-      setSocios(data);
   
-  }; */
-  const response = await axios.get('http://www.morosdelcastell.com:3001/socios')
-  const socios = await response.data;
-  console.log(socios) 
   return (
     <section className="py-20">
     <div className="container">
@@ -72,7 +58,7 @@ async function Page() {
   )
 }
 
-export default Page
+
 
 
 

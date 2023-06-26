@@ -5,7 +5,9 @@ const prisma=new PrismaClient()
 
 
 export async function GET(res) {
+  console.log("listando socios")
   const socios = await prisma.socios.findMany()
+
   return NextResponse.json(socios);
 }
 

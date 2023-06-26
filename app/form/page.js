@@ -17,7 +17,7 @@ export default function Form() {
     e.preventDefault();
     console.log('Procesando')
      try {
-      const res=await fetch('http://localhost:3000/api/socios',{
+      const res=await fetch("/api/socios",{
         method:'POST',
         
         body:JSON.stringify({
